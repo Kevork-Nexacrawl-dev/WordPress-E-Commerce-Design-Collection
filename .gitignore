@@ -1,0 +1,19 @@
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Node modules (if used)
+node_modules/
+
+# Editor directories
+.vscode/
+.idea/
+
+# log files
+*.log
+
+# build output (if any)
+dist/
+build/
