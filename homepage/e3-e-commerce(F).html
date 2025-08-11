@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WP Pro Solutions | WordPress & WooCommerce Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // Performance Tracking with error handling
+        function updateLoadTime() {
+            try {
+                const loadTime = (performance.now() / 1000).toFixed(1);
+                const loadTimeElement = document.getElementById('loadTime');
+                if(loadTimeElement) {
+                    loadTimeElement.textContent = `${loadTime}s`;
+                }
+            } catch(e) {
+                console.error('Performance tracking error:', e);
+            }
+        }
+        if(document.readyState === 'complete') {
+            updateLoadTime();
+        } else {
+            window.addEventListener('load', updateLoadTime);
+        }
+
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3c72',
+                        secondary: '#2a5298',
+                        accent: '#ff6b35',
+                        dark: '#1a1a1a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.9) 0%, rgba(42, 82, 152, 0.9) 100%);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .stats-grid {
+            background: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 70%);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="text-2xl font-bold">
+                        <span class="text-accent">WP</span><span class="text-primary">Pro</span> <span class="text-gray-600">Solutions</span>
+                    </div>
+                    <div class="ml-4 hidden md:block text-sm text-gray-500 border-l border-gray-300 pl-4">
+                        <span>Professional WordPress Development</span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row sm:justify-between items-center gap-4">
+                    <div class="flex items-center text-sm">
+                        <i class="fas fa-envelope text-accent mr-2"></i>
+                        <span>hello@wpprosolutions.com</span>
+                    </div>
+                    <a href="#contact" class="bg-accent hover:bg-orange-600 text-white pl-10 pr-16 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                        <i class="fas fa-paper-plane text-lg mr-5"></i> Get Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 md:py-28 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-full h-full bg-repeat" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Performance Badge -->
+            <div class="absolute -top-8 right-2 z-20">
+                <div class="bg-white bg-opacity-20 backdrop-blur-sm shadow-lg rounded-full px-4 py-2 flex items-center">
+                    <span class="text-xs font-medium mr-2 text-white">Loaded in</span>
+                    <span id="loadTime" class="font-bold text-accent">0.0s</span>
+                </div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-block bg-accent bg-opacity-20 text-accent px-4 py-1 rounded-full text-sm font-medium mb-4">
+                    <i class="fas fa-code mr-2"></i> WordPress Specialist
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    <span class="block">WordPress & eCommerce Sites Built</span>
+                    <span class="text-accent">for Speed & Results</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto mb-8">
+                    Professional WordPress solutions that deliver fast-loading, conversion-focused websites for growing businesses
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+                    <a href="#services" class="bg-accent hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                        <i class="fas fa-folder-open mr-2"></i> View Portfolio
+                    </a>
+                    <a href="#contact" class="bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                        <i class="fas fa-calculator mr-2"></i> Get Quote
+                    </a>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 max-w-4xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                        <div class="flex items-start">
+                            <div class="bg-accent bg-opacity-20 p-3 rounded-lg mr-4">
+                                <i class="fas fa-rocket text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-2">WordPress Development</h3>
+                                <p class="text-gray-200 text-sm">Custom websites with mobile-first design</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-accent bg-opacity-20 p-3 rounded-lg mr-4">
+                                <i class="fas fa-shopping-cart text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-2">eCommerce Solutions</h3>
+                                <p class="text-gray-200 text-sm">WooCommerce stores with payment integration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white stats-grid">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center p-6">
+                    <div class="text-4xl font-bold text-primary mb-2">Sub-2s</div>
+                    <div class="text-gray-600">Load Times</div>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl font-bold text-primary mb-2">100%</div>
+                    <div class="text-gray-600">Mobile-Optimized</div>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl font-bold text-primary mb-2">SEO</div>
+                    <div class="text-gray-600">Ready</div>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl font-bold text-primary mb-2">Focus</div>
+                    <div class="text-gray-600">Conversion-Focused</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">WordPress & eCommerce Solutions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Specialized services that help businesses establish a strong online presence with fast, professional websites
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- WordPress Development -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl flex flex-col h-full">
+                    <div class="bg-gradient-to-r from-primary to-secondary h-2"></div>
+                    <div class="p-8 flex flex-col h-full justify-between">
+                        <div>
+                            <div class="flex items-center mb-6">
+                                <div class="bg-primary bg-opacity-10 p-4 rounded-lg mr-4">
+                                    <i class="fab fa-wordpress text-primary text-3xl service-icon transition-transform duration-300"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-800">WordPress Development</h3>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-check-circle text-accent mr-2"></i>
+                                    <span class="font-medium">Mobile-responsive design guaranteed</span>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-check-circle text-accent mr-2"></i>
+                                    <span class="font-medium">Speed optimization included</span>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-check-circle text-accent mr-2"></i>
+                                    <span class="font-medium">SEO-ready structure</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-accent mr-2"></i>
+                                    <span class="font-medium">30-day support included</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                                <div class="flex items-center justify-between text-sm">
+                                    <div class="flex items-center text-gray-600">
+                                        <i class="fas fa-clock text-accent mr-2"></i>
+                                        <span>5-10 business day delivery</span>
+                                    </div>
+                                    <div class="font-bold text-primary">Starting at $495</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="inline-block bg-primary bg-opacity-10 text-primary hover:bg-opacity-20 px-6 py-2 rounded-full font-medium transition-all duration-300">
+                            Get Started <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- eCommerce Solutions -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl flex flex-col h-full">
+                    <div class="bg-gradient-to-r from-accent to-orange-500 h-2"></div>
+                    <div class="p-8 flex flex-col h-full justify-between">
+                        <div>
+                            <div class="flex items-center mb-6">
+                                <div class="bg-accent bg-opacity-10 p-4 rounded-lg mr-4">
+                                    <i class="fas fa-shopping-cart text-accent text-3xl service-icon transition-transform duration-300"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-800">eCommerce Solutions</h3>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-check-circle text-accent mr-2"></i>
+                                    <span class="font-medium">Complete payment integration</span>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-check-circle text-accent mr-2"></i>
+                                    <span class="font-medium">Mobile-optimized checkout</span>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-check-circle text-accent mr-2"></i>
+                                    <span class="font-medium">Inventory management setup</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-accent mr-2"></i>
+                                    <span class="font-medium">SSL & security configuration</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                                <div class="flex items-center justify-between text-sm">
+                                    <div class="flex items-center text-gray-600">
+                                        <i class="fas fa-shopping-cart text-accent mr-2"></i>
+                                        <span>Complete setup with payment integration</span>
+                                    </div>
+                                    <div class="font-bold text-accent">Starting at $795</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="inline-block bg-accent bg-opacity-10 text-accent hover:bg-opacity-20 px-6 py-2 rounded-full font-medium transition-all duration-300">
+                            Get Started <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Tools -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Tools & Technologies I Use</h3>
+            </div>
+            <div class="flex flex-wrap justify-center gap-8 items-center opacity-70">
+                <div class="flex items-center space-x-2">
+                    <i class="fab fa-wordpress text-2xl text-blue-600"></i>
+                    <span class="font-medium">WordPress</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fab fa-php text-2xl text-purple-600"></i>
+                    <span class="font-medium">PHP</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fab fa-js-square text-2xl text-yellow-500"></i>
+                    <span class="font-medium">JavaScript</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-shopping-cart text-2xl text-purple-500"></i>
+                    <span class="font-medium">WooCommerce</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-credit-card text-2xl text-blue-500"></i>
+                    <span class="font-medium">Stripe</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Portfolio Projects -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Recent Portfolio Projects</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Here are some recent projects showcasing my WordPress and eCommerce development skills
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300">
+                    <div class="flex justify-center mb-6">
+                        <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-tshirt text-accent text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">E-commerce Fashion Store</h3>
+                        <p class="text-gray-700">
+                            Complete WooCommerce setup with mobile optimization and payment integration
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-primary bg-opacity-10 rounded-lg p-3 mb-4">
+                            <div class="text-sm text-gray-600">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span>Platform:</span>
+                                    <span class="font-medium">WordPress + WooCommerce</span>
+                                </div>
+                                <div class="flex justify-between items-center mb-1">
+                                    <span>Features:</span>
+                                    <span class="font-medium">Stripe, Mobile-First</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Timeline:</span>
+                                    <span class="font-medium">8 days</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#contact" class="text-accent font-medium hover:underline">Get Similar Site →</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300">
+                    <div class="flex justify-center mb-6">
+                        <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-calendar-check text-primary text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Local Service Business</h3>
+                        <p class="text-gray-700">
+                            WordPress site with booking system and local SEO optimization
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-accent bg-opacity-10 rounded-lg p-3 mb-4">
+                            <div class="text-sm text-gray-600">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span>Platform:</span>
+                                    <span class="font-medium">WordPress + Booking</span>
+                                </div>
+                                <div class="flex justify-between items-center mb-1">
+                                    <span>Features:</span>
+                                    <span class="font-medium">SEO, Contact Forms</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Timeline:</span>
+                                    <span class="font-medium">6 days</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#contact" class="text-primary font-medium hover:underline">Get Similar Site →</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300">
+                    <div class="flex justify-center mb-6">
+                        <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-user-tie text-secondary text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Professional Portfolio</h3>
+                        <p class="text-gray-700">
+                            Clean, fast-loading WordPress site with custom design
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-secondary bg-opacity-10 rounded-lg p-3 mb-4">
+                            <div class="text-sm text-gray-600">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span>Platform:</span>
+                                    <span class="font-medium">WordPress Custom</span>
+                                </div>
+                                <div class="flex justify-between items-center mb-1">
+                                    <span>Features:</span>
+                                    <span class="font-medium">Custom Design, Fast</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Timeline:</span>
+                                    <span class="font-medium">5 days</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#contact" class="text-secondary font-medium hover:underline">Get Similar Site →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-flex items-center text-accent font-medium hover:text-orange-600">
+                    View Full Portfolio
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Build Your Professional Website?</h2>
+                <p class="text-xl text-gray-100 mb-8">
+                    Get a free consultation to discuss your project needs and see how I can help grow your business online
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact" class="bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                        <i class="fas fa-calendar-alt mr-2"></i> Schedule Free Consultation
+                    </a>
+                    <a href="mailto:hello@wpprosolutions.com" class="bg-accent hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                        <i class="fas fa-comment-dots mr-2"></i> Get Quote
+                    </a>
+                </div>
+                
+                <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4 text-sm text-gray-200">
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt mr-2"></i>
+                        <span>Free initial consultation</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-clock mr-2"></i>
+                        <span>Available for consultation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- About -->
+                <div>
+                    <h6 class="text-white font-bold text-lg mb-4">WP Pro Solutions</h6>
+                    <p class="mb-4">
+                        WordPress specialist focused on building fast, professional websites that help businesses grow online. Every project is optimized for speed, mobile performance, and search engines.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h6 class="text-white font-bold text-lg mb-4">Services</h6>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">WordPress Development</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">WooCommerce Solutions</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Custom Web Design</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Website Maintenance</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">SEO Optimization</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company -->
+                <div>
+                    <h6 class="text-white font-bold text-lg mb-4">Company</h6>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">About Me</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Process</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h6 class="text-white font-bold text-lg mb-4">Contact</h6>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-globe text-accent mt-1 mr-3"></i>
+                            <span>Remote WordPress Development<br>Serving clients worldwide</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-accent mr-3"></i>
+                            <span>Available for consultation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-accent mr-3"></i>
+                            <span>hello@wpprosolutions.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <p>&copy; 2025 WP Pro Solutions. All rights reserved.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 text-sm">
+                        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Live Chat Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="mailto:hello@wpprosolutions.com" class="bg-accent hover:bg-orange-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110">
+            <i class="fas fa-envelope text-xl"></i>
+        </a>
+    </div>
+</body>
+</html>

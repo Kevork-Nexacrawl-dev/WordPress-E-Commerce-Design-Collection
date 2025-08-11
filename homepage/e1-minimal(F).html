@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexacrawl | Premium Digital Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ffffff',
+                        slate: '#334155',
+                        charcoal: '#121826',
+                        gold: '#b38b59',
+                        light: '#f6f8fa',
+                        dark: '#0f172a'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', '-apple-system', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 14px rgba(0, 0, 0, 0.02)',
+                        'elevated': '0 20px 35px -10px rgba(0, 0, 0, 0.08)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .animate-delay-100 { animation-delay: 0.1s; }
+        .animate-delay-200 { animation-delay: 0.2s; }
+        .animate-delay-300 { animation-delay: 0.3s; }
+        .animate-delay-400 { animation-delay: 0.4s; }
+        .bg-gradient-dark {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .pattern-dots {
+            background-image: radial-gradient(rgba(179, 139, 89, 0.08) 1px, transparent 1px);
+            background-size: 18px 18px;
+        }
+        .service-icon {
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+        .gold-line {
+            height: 3px;
+            width: 40px;
+            background: #b38b59;
+            margin: 20px auto;
+        }
+        .testimonial-card {
+            transition: all 0.4s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+        }
+        .process-step::after {
+            content: "";
+            position: absolute;
+            top: 40px;
+            right: -40px;
+            width: 30px;
+            height: 2px;
+            background: #b38b59;
+            z-index: 1;
+        }
+        .process-step:last-child::after {
+            display: none;
+        }
+        .contact-form input, 
+        .contact-form textarea {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: all 0.3s ease;
+        }
+        .contact-form input:focus, 
+        .contact-form textarea:focus {
+            border-color: #b38b59;
+            outline: none;
+        }
+        .newsletter-input {
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .newsletter-input:focus {
+            border-color: #b38b59;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(179, 139, 89, 0.15);
+        }
+        .staggered-item:nth-child(1) { animation-delay: 0.1s; }
+        .staggered-item:nth-child(2) { animation-delay: 0.2s; }
+        .staggered-item:nth-child(3) { animation-delay: 0.3s; }
+        .staggered-item:nth-child(4) { animation-delay: 0.4s; }
+        @media (max-width: 768px) {
+            .process-step::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-primary text-charcoal">
+    <!-- Floating elements -->
+    <div class="fixed top-1/4 right-[5%] w-6 h-6 bg-gold opacity-10 rounded-full animate-float hidden md:block"></div>
+    <div class="fixed top-1/3 left-[10%] w-8 h-8 bg-gold opacity-5 rounded-full animate-float hidden md:block" style="animation-delay: 2s;"></div>
+
+    <!-- Header -->
+    <header class="border-b border-gray-100 sticky top-0 bg-white/90 backdrop-blur-sm z-50">
+        <div class="container mx-auto flex justify-between items-center py-5 px-4 md:px-6">
+            <div class="text-2xl font-semibold tracking-wide text-charcoal ml-2">
+                Nexa<span class="text-gold">crawl</span>
+            </div>
+            <div class="relative group">
+                <a href="#contact" class="text-charcoal hover:text-gold transition-all px-4 py-2 rounded-md border border-gray-200 bg-white hover:border-gold/30 flex items-center gap-2">
+                    <span>Contact Us</span>
+                    <i class="ri-arrow-right-up-line"></i>
+                </a>
+                <div class="absolute -bottom-9 right-0 bg-gold text-white px-3 py-1 rounded-full text-xs font-medium tracking-wide whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all shadow-lg">
+                    NEXALUNCH50
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-28 pb-20 md:pt-36 md:pb-32 relative overflow-hidden">
+        <div class="absolute inset-0 pattern-dots pointer-events-none"></div>
+        <div class="container mx-auto px-4 md:px-6 text-center relative z-10">
+            <div class="bg-gold/10 w-fit mx-auto px-6 py-2 rounded-full text-gold font-medium text-sm mb-6 animate-fade-in">
+                Premium Digital Solutions
+            </div>
+            <h1 class="text-4xl md:text-6xl font-medium text-charcoal tracking-tight max-w-3xl mx-auto leading-tight animate-fade-in animate-delay-100">
+                Digital Excellence <span class="text-gold font-semibold">Perfected</span>
+            </h1>
+            <p class="mt-6 text-xl text-slate max-w-2xl mx-auto leading-relaxed animate-fade-in animate-delay-200">
+                We create strategic digital products focused on measurable outcomes and exceptional user experiences.
+            </p>
+            <div class="mt-12 animate-fade-in animate-delay-300">
+                <a href="#portfolio" class="bg-charcoal text-white border-2 border-charcoal px-8 py-4 tracking-wide font-medium hover:bg-gold hover:border-gold hover:shadow-elevated transition-all duration-300 inline-flex items-center gap-2 rounded-md">
+                    View Our Success Stories
+                    <i class="ri-arrow-down-line"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Minimal hero visual -->
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-0"></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div class="text-center staggerd-item animate-fade-in">
+                    <div class="text-4xl md:text-5xl font-bold text-charcoal mb-2">150+</div>
+                    <div class="text-slate/80">Projects Delivered</div>
+                </div>
+                <div class="text-center staggerd-item animate-fade-in animate-delay-100">
+                    <div class="text-4xl md:text-5xl font-bold text-charcoal mb-2">98%</div>
+                    <div class="text-slate/80">Client Retention</div>
+                </div>
+                <div class="text-center staggerd-item animate-fade-in animate-delay-200">
+                    <div class="text-4xl md:text-5xl font-bold text-charcoal mb-2">40+</div>
+                    <div class="text-slate/80">Experts</div>
+                </div>
+                <div class="text-center staggerd-item animate-fade-in animate-delay-300">
+                    <div class="text-4xl md:text-5xl font-bold text-charcoal mb-2">12</div>
+                    <div class="text-slate/80">Awards Won</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 md:py-32 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="gold-line"></div>
+                <h2 class="text-3xl md:text-4xl font-medium text-charcoal mb-4">Expert Services</h2>
+                <p class="text-slate/80 font-light md:text-lg max-w-2xl mx-auto">
+                    Strategic solutions crafted to elevate your digital presence and drive measurable outcomes.
+                </p>
+            </div>
+                        
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Web Development Service -->
+                <div class="service-card bg-white rounded-xl border border-gray-100 p-8 transition-all duration-300 hover:shadow-elevated overflow-hidden relative">
+                    <div class="service-icon w-16 h-16 rounded-xl flex items-center justify-center text-gold mb-6 bg-gold/10">
+                        <i class="ri-code-s-slash-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-medium text-charcoal mb-4">Web Development</h3>
+                    <p class="text-slate mb-4 leading-relaxed">
+                        Responsive, accessible websites built with technical excellence and cutting-edge frameworks.
+                    </p>
+                    <ul class="space-y-2 mt-6 text-sm text-slate/80">
+                        <li class="flex items-center"><i class="ri-check-line text-gold mr-2"></i> Custom WordPress Solutions</li>
+                        <li class="flex items-center"><i class="ri-check-line text-gold mr-2"></i> React & Vue.js Applications</li>
+                        <li class="flex items-center"><i class="ri-check-line text-gold mr-2"></i> Headless CMS Integration</li>
+                    </ul>
+                </div>
+                                
+                <!-- eCommerce Service -->
+                <div class="service-card bg-gradient-dark text-white rounded-xl p-8 transition-all duration-300 hover:shadow-xl overflow-hidden relative transform hover:-translate-y-1">
+                    <div class="service-icon w-16 h-16 rounded-xl flex items-center justify-center text-gold mb-6 bg-gold/20">
+                        <i class="ri-shopping-cart-2-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-medium text-white mb-4">eCommerce Solutions</h3>
+                    <p class="text-slate-200 mb-4 leading-relaxed">
+                        Scalable retail platforms optimized for conversion and seamless shopping experiences.
+                    </p>
+                    <ul class="space-y-2 mt-6 text-sm text-slate-300">
+                        <li class="flex items-center"><i class="ri-check-line text-gold mr-2"></i> WooCommerce & Shopify Pro</li>
+                        <li class="flex items-center"><i class="ri-check-line text-gold mr-2"></i> Payment Gateway Integration</li>
+                        <li class="flex items-center"><i class="ri-check-line text-gold mr-2"></i> Inventory & Order Management</li>
+                    </ul>
+                </div>
+                                
+                <!-- SEO Strategy -->
+                <div class="service-card bg-white rounded-xl border border-gray-100 p-8 transition-all duration-300 hover:shadow-elevated overflow-hidden relative">
+                    <div class="service-icon w-16 h-16 rounded-xl flex items-center justify-center text-gold mb-6 bg-gold/10">
+                        <i class="ri-line-chart-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-medium text-charcoal mb-4">SEO Strategy</h3>
+                    <p class="text-slate mb-4 leading-relaxed">
+                        Sustainable organic growth through technical SEO, content optimization, and strategic planning.
+                    </p>
+                    <ul class="space-y-2 mt-6 text-sm text-slate/80">
+                        <li class="flex items-center"><i class="ri-check-line text-gold mr-2"></i> Technical Audits</li>
+                        <li class="flex items-center"><i class="ri-check-line text-gold mr-2"></i> Keyword Research & Analysis</li>
+                        <li class="flex items-center"><i class="ri-check-line text-gold mr-2"></i> Local & Global SEO</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-light">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="gold-line"></div>
+                <h2 class="text-3xl md:text-4xl font-medium text-charcoal mb-4">Our Process</h2>
+                <p class="text-slate/80 font-light md:text-lg max-w-2xl mx-auto">
+                    A streamlined approach to delivering exceptional results
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto relative">
+                <!-- Step 1 -->
+                <div class="process-step relative text-center p-6 bg-white rounded-xl border border-gray-100">
+                    <div class="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-gold">1</span>
+                    </div>
+                    <h3 class="text-xl font-medium text-charcoal mb-3">Discover</h3>
+                    <p class="text-slate/80">Deep dive into your business goals and challenges</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="process-step relative text-center p-6 bg-white rounded-xl border border-gray-100">
+                    <div class="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-gold">2</span>
+                    </div>
+                    <h3 class="text-xl font-medium text-charcoal mb-3">Design</h3>
+                    <p class="text-slate/80">Crafting elegant, user-centered solutions</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="process-step relative text-center p-6 bg-white rounded-xl border border-gray-100">
+                    <div class="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-gold">3</span>
+                    </div>
+                    <h3 class="text-xl font-medium text-charcoal mb-3">Develop</h3>
+                    <p class="text-slate/80">Building with precision and modern technologies</p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="process-step relative text-center p-6 bg-white rounded-xl border border-gray-100">
+                    <div class="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-gold">4</span>
+                    </div>
+                    <h3 class="text-xl font-medium text-charcoal mb-3">Deliver</h3>
+                    <p class="text-slate/80">Launching and optimizing for ongoing success</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <div class="gold-line"></div>
+                <h2 class="text-3xl md:text-4xl font-medium text-charcoal mb-4">Featured Work</h2>
+                <p class="text-slate/80 font-light md:text-lg max-w-2xl mx-auto">
+                    A glimpse of our craftsmanship in solving complex digital challenges
+                </p>
+            </div>
+                        
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item group">
+                    <div class="relative rounded-xl overflow-hidden border border-gray-100">
+                        <div class="bg-gray-100 aspect-[5/4] flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-16 h-16 text-gray-300">
+                                <path fill="currentColor" d="M21 11.5v-1a1 1 0 0 0-.3-.7l-3-3A.996.996 0 0 0 17 6h-2.868a2 2 0 0 0 1.732-1H17a1 1 0 1 0 0-2h-1.136a2 2 0 0 0-3.728 0H7a1 1 0 1 0 0 2h1.136a2 2 0 0 0 1.732 1H7a.996.996 0 0 0-.707.293l-3 3A1 1 0 0 0 3 10.5v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1zM5 10.414l2.586-2.586A.996.996 0 0 0 8.414 7h7.172a.996.996 0 0 0 .707.293L18.587 10H5v.414zM4 11.5h16a1 1 0 0 1 1 1v1H3v-1a1 1 0 0 1 1-1zm-1 3h18v1.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1.5z"/>
+                            </svg>
+                        </div>
+                        <div class="overlay absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 transition-opacity flex flex-col justify-end p-8">
+                            <div class="text-left">
+                                <h3 class="text-xl font-medium text-white mb-2">Luxury Fashion Retail</h3>
+                                <p class="text-gold text-sm mb-4">eCommerce Solution</p>
+                                <a href="#" class="text-sm font-medium text-white hover:text-gold transition-colors inline-flex items-center">
+                                    View Case Study <i class="ri-arrow-right-line ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item group">
+                    <div class="relative rounded-xl overflow-hidden border border-gray-100">
+                        <div class="bg-gray-100 aspect-[5/4] flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-16 h-16 text-gray-300">
+                                <path fill="currentColor" d="M16 6v1h3v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7h3V6a4 4 0 0 1 4-4a4 4 0 0 1 4 4zm-6 0v5h4V6a2 2 0 1 0-4 0zm-2 7h8v5a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-5zM4 13v2H2v-2h2zm0-3v2H2v-2h2zm0-3v2H2V7h2zm0-3v2H2V4h2zm16 9v2h-2v-2h2zm0-3v2h-2V7h2zm0-3v2h-2V4h2z"/>
+                            </svg>
+                        </div>
+                        <div class="overlay absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 transition-opacity flex flex-col justify-end p-8">
+                            <div class="text-left">
+                                <h3 class="text-xl font-medium text-white mb-2">Dining Experience</h3>
+                                <p class="text-gold text-sm mb-4">Booking System</p>
+                                <a href="#" class="text-sm font-medium text-white hover:text-gold transition-colors inline-flex items-center">
+                                    View Case Study <i class="ri-arrow-right-line ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item group">
+                    <div class="relative rounded-xl overflow-hidden border border-gray-100">
+                        <div class="bg-gray-100 aspect-[5/4] flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-16 h-16 text-gray-300">
+                                <path fill="currentColor" d="M4 3h16a1 1 0 0 1 1 1v7H3V4a1 1 0 0 1 1-1zM3 14h18v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-7zm3 2v2h2v-2H6zM6 6v2h2V6H6z"/>
+                            </svg>
+                        </div>
+                        <div class="overlay absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 transition-opacity flex flex-col justify-end p-8">
+                            <div class="text-left">
+                                <h3 class="text-xl font-medium text-white mb-2">Tech Enterprise</h3>
+                                <p class="text-gold text-sm mb-4">Corporate Identity</p>
+                                <a href="#" class="text-sm font-medium text-white hover:text-gold transition-colors inline-flex items-center">
+                                    View Case Study <i class="ri-arrow-right-line ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#" class="inline-flex items-center text-gold font-medium hover:text-charcoal transition-colors">
+                    View all case studies <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-light">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="gold-line"></div>
+                <h2 class="text-3xl md:text-4xl font-medium text-charcoal mb-4">Client Testimonials</h2>
+                <p class="text-slate/80 font-light md:text-lg max-w-2xl mx-auto">
+                    What our clients say about working with us
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white rounded-xl p-8 border border-gray-100 shadow-soft">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center text-gold text-xl font-bold mr-4">JD</div>
+                        <div>
+                            <h3 class="text-xl font-medium text-charcoal">John Davies</h3>
+                            <p class="text-slate/80">CTO, TechInnovate</p>
+                        </div>
+                    </div>
+                    <p class="text-slate leading-relaxed mb-6">
+                        "Nexacrawl transformed our digital presence with their strategic approach. The team's attention to detail and commitment to excellence is unmatched."
+                    </p>
+                    <div class="flex text-gold">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white rounded-xl p-8 border border-gray-100 shadow-soft">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center text-gold text-xl font-bold mr-4">SR</div>
+                        <div>
+                            <h3 class="text-xl font-medium text-charcoal">Sarah Reynolds</h3>
+                            <p class="text-slate/80">Marketing Director, LuxeStyle</p>
+                        </div>
+                    </div>
+                    <p class="text-slate leading-relaxed mb-6">
+                        "Our eCommerce platform saw a 150% increase in conversions after Nexacrawl's redesign. Their expertise in user experience is truly exceptional."
+                    </p>
+                    <div class="flex text-gold">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 md:py-32 bg-gradient-dark text-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-center">
+                <div>
+                    <div class="bg-gold/10 w-fit px-6 py-2 rounded-full text-gold font-medium text-sm mb-6">
+                        Ready to elevate your digital presence?
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-medium mb-6">Let's Build Something Great Together</h2>
+                    <p class="text-slate-200 mb-8 text-lg">
+                        Contact us to discuss how we can transform your vision into a powerful digital reality
+                    </p>
+                    <div class="mt-8 mb-6">
+                        <a href="mailto:contact@nexacrawl.com" class="text-xl font-light text-white hover:text-gold transition-colors inline-flex items-center gap-3 mb-4">
+                            <i class="ri-mail-line"></i> contact@nexacrawl.com
+                        </a>
+                        <div class="mt-4">
+                            <a href="#" class="bg-white text-charcoal border-0 px-8 py-4 tracking-wide font-medium hover:bg-gold hover:text-white hover:shadow-elevated transition-all duration-300 inline-flex items-center gap-2 rounded-md mt-4">
+                                <i class="ri-calendar-check-line"></i> Book Consultation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
+                    <h3 class="text-2xl font-medium mb-6">Send us a message</h3>
+                    <form class="contact-form space-y-6">
+                        <div>
+                            <label class="block text-slate-300 mb-2">Name</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg text-white placeholder-slate-400" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="block text-slate-300 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg text-white placeholder-slate-400" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-slate-300 mb-2">Message</label>
+                            <textarea class="w-full px-4 py-3 rounded-lg text-white placeholder-slate-400 h-32" placeholder="Tell us about your project"></textarea>
+                        </div>
+                        <button type="submit" class="bg-gold text-white border-0 px-8 py-4 tracking-wide font-medium hover:bg-charcoal hover:shadow-elevated transition-all duration-300 inline-flex items-center gap-2 rounded-md w-full justify-center">
+                            Send Message <i class="ri-send-plane-line"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-100 bg-white">
+        <div class="container mx-auto py-16 px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-semibold tracking-wide text-charcoal mb-5">
+                        Nexa<span class="text-gold">crawl</span>
+                    </h3>
+                    <p class="text-slate max-w-md mb-6">
+                        Crafting digital experiences that drive results through precision engineering and strategic design.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center text-slate hover:text-gold hover:border-gold transition-colors">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center text-slate hover:text-gold hover:border-gold transition-colors">
+                            <i class="ri-dribbble-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center text-slate hover:text-gold hover:border-gold transition-colors">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                    </div>
+                </div>
+                                
+                <div>
+                    <h4 class="text-lg font-semibold text-charcoal mb-5">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-slate hover:text-gold transition-colors">Web Development</a></li>
+                        <li><a href="#" class="text-slate hover:text-gold transition-colors">eCommerce Solutions</a></li>
+                        <li><a href="#" class="text-slate hover:text-gold transition-colors">SEO Strategy</a></li>
+                        <li><a href="#" class="text-slate hover:text-gold transition-colors">UI/UX Design</a></li>
+                        <li><a href="#" class="text-slate hover:text-gold transition-colors">Brand Identity</a></li>
+                    </ul>
+                </div>
+                                
+                <div>
+                    <h4 class="text-lg font-semibold text-charcoal mb-5">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-slate hover:text-gold transition-colors">Our Work</a></li>
+                        <li><a href="#" class="text-slate hover:text-gold transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-slate hover:text-gold transition-colors">Process</a></li>
+                        <li><a href="#" class="text-slate hover:text-gold transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-slate hover:text-gold transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Newsletter -->
+            <div class="mt-16 pt-10 border-t border-gray-100">
+                <div class="max-w-lg">
+                    <h4 class="text-lg font-semibold text-charcoal mb-4">Join our newsletter</h4>
+                    <p class="text-slate mb-6">Subscribe for insights on digital innovation and design trends</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Your email address" class="newsletter-input flex-grow px-4 py-3 rounded-lg border">
+                        <button class="bg-charcoal text-white px-6 py-3 rounded-lg hover:bg-gold transition-colors">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+                        
+            <div class="border-t border-gray-100 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-slate mb-4 md:mb-0">&copy; 2025 Nexacrawl. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-sm text-slate hover:text-gold transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-sm text-slate hover:text-gold transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to top -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-gold text-white flex items-center justify-center shadow-lg hover:bg-charcoal transition-all opacity-0 invisible">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    
+    <script>
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopButton.style.opacity = '1';
+                backToTopButton.style.visibility = 'visible';
+            } else {
+                backToTopButton.style.opacity = '0';
+                backToTopButton.style.visibility = 'hidden';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Animate elements on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.staggerd-item').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Business Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        palette1: '#1e3a8a',
+                        palette2: '#1d4ed8',
+                        palette3: '#3b82f6',
+                        palette4: '#93c5fd',
+                        palette5: '#dbeafe',
+                        palette6: '#64748b',
+                        palette7: '#334155',
+                        palette8: '#0f172a',
+                        palette9: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        .hero-gradient {
+            background: linear-gradient(270deg, rgba(51,65,85,0.7) 33%, rgba(248,250,252,0.7) 27%);
+        }
+        
+        .stats-gradient {
+            background: linear-gradient(90deg, rgba(15,23,42,0.7) 35%, rgba(248,250,252,0.7) 30%);
+        }
+        
+        .border-bottom-blue {
+            position: relative;
+        }
+        
+        .border-bottom-blue::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 64px;
+            height: 2px;
+            background-color: #1d4ed8;
+        }
+        
+        .countup {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .countup:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stats-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .stats-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="font-sans text-palette7 antialiased bg-white">
+    <!-- Hero Section -->
+    <section class="relative bg-palette9 py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full hero-gradient opacity-80 z-0"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col lg:flex-row gap-8 items-center">
+                <!-- Left Column - Content -->
+                <div class="lg:w-1/2 flex flex-col space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="text-palette3 text-sm lg:text-base font-semibold uppercase tracking-wider">01</div>
+                        <div class="text-palette6 text-sm lg:text-base font-medium uppercase tracking-wider">Digital Innovation</div>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-palette3 leading-tight max-w-xl">
+                        Transforming vision into digital reality
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-palette3 max-w-2xl opacity-90">
+                        We craft innovative digital solutions that empower businesses and enhance user experiences. Our approach blends creativity with cutting-edge technology.
+                    </p>
+                    
+                    <div class="pt-4">
+                        <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-palette3 hover:bg-palette8 transition duration-300">
+                            Start Your Project
+                            <i class="fas fa-arrow-right ml-2 animate-pulse"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Images -->
+                <div class="lg:w-1/2 relative mt-12 lg:mt-0">
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80" alt="Digital solution" class="object-cover w-full h-full rounded-xl">
+                        </div>
+                    </div>
+                    
+                    <div class="absolute -right-10 -top-10 w-32 h-32 bg-palette3 border-8 border-white rounded-full shadow-xl z-20 flex items-center justify-center">
+                        <span class="text-white text-5xl font-bold">+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute top-0 left-0 w-full h-full bg-palette9 opacity-60"></div>
+        <div class="max-w-4xl mx-auto relative z-10 text-center py-16 md:py-24 px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-palette3">
+                Tailored solutions for modern businesses
+            </h2>
+            <p class="mt-6 text-xl text-palette4 max-w-2xl mx-auto">
+                We help innovative companies transform their ideas into scalable digital products users love.
+            </p>
+            <div class="mt-8">
+                <a href="#solutions" class="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-palette3 hover:bg-palette8 transition duration-300">
+                    Explore Solutions
+                    <i class="fas fa-chevron-down ml-3 animate-bounce"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+        <div class="relative max-w-7xl mx-auto">
+            <div class="bg-palette3 rounded-3xl overflow-hidden shadow-2xl transform -translate-y-24 md:-translate-y-32">
+                <div class="flex flex-col lg:flex-row">
+                    <!-- Text Content -->
+                    <div class="lg:w-1/2 p-10 md:p-14">
+                        <div class="uppercase text-palette6 text-sm font-medium tracking-widest">Our Expertise</div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mt-4 mb-8 leading-tight">
+                            Strategic digital services for exponential growth
+                        </h2>
+                        <p class="text-palette4 text-lg max-w-xl">
+                            We focus on delivering measurable results through innovative approaches and expert execution.
+                        </p>
+                    </div>
+                    
+                    <!-- Image -->
+                    <div class="lg:w-1/2">
+                        <div class="aspect-w-16 aspect-h-10">
+                            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80" alt="Digital services" class="object-cover w-full h-full">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Floating Card -->
+                <div class="relative">
+                    <div class="bg-white rounded-2xl shadow-xl mx-5 md:mx-10 p-8 max-w-md -mt-16 z-20">
+                        <h3 class="text-xl font-bold text-palette7 mb-4">Strategic Planning</h3>
+                        <p class="text-palette6">
+                            Data-driven strategies that align with your business objectives and market opportunities.
+                        </p>
+                        <div class="mt-6 flex items-center">
+                            <a href="#" class="flex items-center text-palette3 font-medium text-sm hover:text-palette8">
+                                Learn more
+                                <i class="fas fa-long-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Statistics Section -->
+    <section class="relative py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-palette9">
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <div class="uppercase text-palette6 font-medium tracking-wider text-sm mb-3">
+                Impact and Results
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-palette3 mb-16">
+                Quantifying our success in client growth
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+                <!-- Stat 1 -->
+                <div class="stats-card bg-white rounded-xl p-8 shadow-md flex flex-col items-center border-bottom-blue">
+                    <span class="text-palette5 text-sm font-medium mb-2 uppercase">Client Growth</span>
+                    <div class="countup">
+                        <span class="text-5xl font-bold text-palette3">50%</span>
+                        <span class="text-palette6 text-sm mt-1">Average client growth year over year</span>
+                    </div>
+                </div>
+                
+                <!-- Stat 2 -->
+                <div class="stats-card bg-white rounded-xl p-8 shadow-md flex flex-col items-center border-bottom-blue">
+                    <span class="text-palette5 text-sm font-medium mb-2 uppercase">Solution Speed</span>
+                    <div class="countup">
+                        <span class="text-5xl font-bold text-palette3">8/mo</span>
+                        <span class="text-palette6 text-sm mt-1">Solutions delivered monthly</span>
+                    </div>
+                </div>
+                
+                <!-- Stat 3 -->
+                <div class="stats-card bg-white rounded-xl p-8 shadow-md flex flex-col items-center border-bottom-blue">
+                    <span class="text-palette5 text-sm font-medium mb-2 uppercase">Project Scale</span>
+                    <div class="countup">
+                        <span class="text-5xl font-bold text-palette3">100K+</span>
+                        <span class="text-palette6 text-sm mt-1">Users impacted by our solutions</span>
+                    </div>
+                </div>
+                
+                <!-- Stat 4 -->
+                <div class="stats-card bg-white rounded-xl p-8 shadow-md flex flex-col items-center border-bottom-blue">
+                    <span class="text-palette5 text-sm font-medium mb-2 uppercase">Experience</span>
+                    <div class="countup">
+                        <span class="text-5xl font-bold text-palette3">20 yr</span>
+                        <span class="text-palette6 text-sm mt-1">Industry experience combined</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-palette2">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="text-center md:text-left">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white max-w-lg">
+                        Ready to transform your digital strategy?
+                    </h2>
+                    <p class="text-palette5 mt-3 max-w-md">
+                        Let's discuss how we can help you achieve your business goals through innovative solutions.
+                    </p>
+                </div>
+                <div class="mt-8 md:mt-0">
+                    <a href="#contact" class="flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-md text-palette2 bg-white hover:bg-palette9 hover:text-palette2 transition duration-300 group">
+                        Get Started Today
+                        <i class="fas fa-arrow-right ml-3 group-hover:animate-pulse"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-palette8 text-palette4 py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                    <h3 class="text-xl font-bold text-white mb-6">Digital Fusion</h3>
+                    <p class="mb-6">
+                        Creating innovative digital solutions that transform businesses and deliver measurable results.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-palette4 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-palette4 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-palette4 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-palette4 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full md:w-2/3">
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Services</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="hover:text-white transition">Digital Strategy</a></li>
+                            <li><a href="#" class="hover:text-white transition">App Development</a></li>
+                            <li><a href="#" class="hover:text-white transition">UI/UX Design</a></li>
+                            <li><a href="#" class="hover:text-white transition">Data Analytics</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Company</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                            <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                            <li><a href="#" class="hover:text-white transition">Case Studies</a></li>
+                            <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Contact</h4>
+                        <ul class="space-y-3">
+                            <li>hello@digitalfusion.com</li>
+                            <li>+1 (555) 123-4567</li>
+                            <li>123 Innovation Drive, Suite 101</li>
+                            <li>Tech City, CA 94103</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-palette7 mt-12 pt-8 text-center text-sm">
+                <p>&copy; 2023 Digital Fusion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating action button -->
+    <button class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-palette3 text-white shadow-lg flex items-center justify-center hover:bg-palette8 transition-all duration-300 transform hover:scale-110 z-50">
+        <i class="fas fa-comments text-xl"></i>
+    </button>
+</body>
+</html>
